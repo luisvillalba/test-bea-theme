@@ -1,6 +1,6 @@
 {
-  "name": "theme-nextjs-bea",
-  "version": "1.1.2",
+  "name": "test-bea-theme",
+  "version": "1.1.3",
   "engines": {
     "node": "^20.x",
     "npm": "^10.x"
@@ -84,10 +84,10 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/prezly/theme-nextjs-bea.git"
+    "url": "git+https://github.com/luisvillalba/test-bea-theme.git"
   },
   "bugs": {
-    "url": "https://github.com/prezly/theme-nextjs-bea/issues"
+    "url": "https://github.com/luisvillalba/test-bea-theme/issues"
   },
-  "homepage": "https://github.com/prezly/theme-nextjs-bea#readme"
+  "homepage": "https://github.com/luisvillalba/test-bea-theme#readme"
 }
