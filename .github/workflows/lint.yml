@@ -1,0 +1,24 @@
+name: Lint
+
+on: push
+
+jobs:
+  run-linters:
+    name: Run Linter checks
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out Git repository
+        uses: actions/checkout@v4
+
+      - name: Setup environment
+        uses: prezly/setup-github-actions@v1
+        with:
+          pnpm: 9.15.4
+          node: 20
+
+      - name: Install Node.js dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Run ESLint and StyleLint
+        run: pnpm lint

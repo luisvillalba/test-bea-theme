@@ -1,0 +1,33 @@
+.link {
+    @include border-radius-m;
+
+    display: block;
+    padding: $spacing-2;
+    text-decoration: none;
+    color: var(--prezly-text-color);
+    font-weight: $font-weight-medium;
+
+    &.active {
+        background: var(--prezly-background-color-tertiary);
+    }
+
+    .withMobileDisplay & {
+        @include mobile-only {
+            @include text-label;
+
+            padding: $spacing-2 $grid-gutter-mobile;
+        }
+    }
+}
+
+.item {
+    width: max-content;
+    min-width: 100%;
+    max-width: 100%;
+
+    &.withMobileDisplay {
+        @include mobile-only {
+            border: 0;
+        }
+    }
+}

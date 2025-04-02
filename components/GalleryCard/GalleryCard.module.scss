@@ -1,0 +1,27 @@
+.container {
+    color: var(--prezly-text-color);
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+        color: var(--prezly-text-color-hover);
+    }
+}
+
+.thumbnailWrapper {
+    @include medium-card-aspect-ratio;
+
+    position: relative;
+    margin: 0 auto $spacing-4;
+}
+
+.thumbnail {
+    @include border-radius-s;
+
+    object-fit: cover;
+    border: 1px solid var(--prezly-border-color);
+}
+
+.title {
+    @include heading-2;
+}

@@ -1,0 +1,36 @@
+$story-container-max-width: 720px;
+
+.container {
+    margin: 0 auto;
+    background: var(--prezly-background-color);
+
+    @include desktop-up {
+        max-width: $story-container-max-width;
+    }
+}
+
+.date {
+    @include text-label;
+
+    color: var(--prezly-text-color-secondary);
+    margin: 0;
+}
+
+.linksAndDateWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-4;
+    margin-bottom: $spacing-6;
+
+    &.left {
+        align-items: flex-start;
+    }
+
+    &.right {
+        align-items: flex-end;
+    }
+
+    &.center {
+        align-items: center;
+    }
+}

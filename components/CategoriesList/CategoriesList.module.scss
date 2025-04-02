@@ -1,0 +1,30 @@
+.moreCategories {
+    color: var(--prezly-accent-color);
+    font-weight: $font-weight-semi-bold;
+}
+
+.categoryLink {
+    font-size: inherit;
+    line-height: inherit;
+
+    &:hover,
+    &:focus,
+    &:active {
+        text-decoration: none;
+    }
+}
+
+// TODO: This just replicates styles from the CategoryLink component
+.moreCategoriesLink {
+    @include link-primary;
+
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.categoriesList {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: $spacing-1;
+}

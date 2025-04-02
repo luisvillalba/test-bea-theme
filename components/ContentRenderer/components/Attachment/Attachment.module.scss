@@ -1,0 +1,60 @@
+.container {
+    @include border-radius-m;
+
+    display: flex;
+    margin: $spacing-6 auto;
+    padding: $spacing-4;
+    background: var(--prezly-background-color-secondary);
+    border: 1px solid var(--prezly-border-color);
+    text-decoration: none;
+    color: inherit;
+}
+
+.icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    flex-shrink: 0;
+    place-self: center;
+    margin-right: $spacing-3;
+
+    @include mobile-only {
+        display: none;
+    }
+}
+
+.content {
+    flex: 1;
+    overflow: hidden;
+}
+
+.name {
+    font-size: $font-size-s;
+    line-height: $font-size-s * 4/3;
+
+    margin: 0 auto $spacing-half;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.meta {
+    font-size: $font-size-xs;
+    line-height: $font-size-xs * 5/4;
+
+    margin: 0 auto;
+    color: var(--prezly-text-color-tertiary);
+    font-weight: $font-weight-regular;
+}
+
+.downloadLink {
+    align-self: center;
+    margin-left: $spacing-3;
+
+    @include mobile-only {
+        margin-left: $spacing-2;
+    }
+
+    .container:hover & {
+        color: var(--prezly-accent-color);
+    }
+}

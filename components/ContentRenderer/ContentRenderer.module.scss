@@ -1,0 +1,220 @@
+$avatar-size: 60px;
+
+// This class is attached to ContentRenderer so that we can
+// modify some global styles for components that are coming
+// from @prezly/content-renderer-react-js
+.renderer {
+    :global {
+        /* stylelint-disable selector-class-pattern, max-nesting-depth, selector-max-compound-selectors */
+        .prezly-slate-document {
+            color: inherit;
+
+            > *:last-child {
+                margin-bottom: 0 !important;
+            }
+        }
+
+        .prezly-slate-divider {
+            border-color: var(--prezly-border-color-secondary);
+        }
+
+        .prezly-slate-image,
+        .prezly-slate-gallery,
+        .prezly-slate-embed {
+            margin-top: $spacing-6;
+            margin-bottom: $spacing-6;
+        }
+
+        .prezly-slate-table {
+            margin-bottom: $spacing-6;
+        }
+
+        .prezly-slate-image-rollover {
+            width: 100%;
+            z-index: 0;
+
+            &__dim {
+                background-color: var(--prezly-background-color);
+            }
+
+            &:hover,
+            &:focus-within {
+                .prezly-slate-image-rollover__dim {
+                    opacity: 0.8;
+                }
+            }
+        }
+
+        .prezly-slate-image-rollover__caption-icon-container {
+            @include border-radius-m;
+
+            background: var(--prezly-accent-color);
+            border-radius: 8px;
+        }
+
+        .prezly-slate-image-rollover__caption {
+            color: var(--prezly-text-color);
+        }
+
+        .prezly-slate-iframely-embed {
+            iframe {
+                border-color: var(--prezly-border-color) !important;
+            }
+        }
+
+        .prezly-slate-image__caption {
+            color: var(--prezly-text-color-secondary);
+            font-size: $font-size-labels;
+        }
+
+        .prezly-slate-contact {
+            border-color: var(--prezly-border-color);
+            box-shadow: none;
+        }
+
+        .prezly-slate-contact__wrapper {
+            gap: $spacing-2;
+        }
+
+        .prezly-slate-contact__name {
+            color: var(--prezly-text-color);
+            font-size: $font-size-m;
+        }
+
+        .prezly-slate-contact__job-description {
+            color: var(--prezly-text-color-secondary);
+            font-size: inherit;
+        }
+
+        .prezly-slate-contact__avatar {
+            width: $avatar-size;
+            height: $avatar-size;
+            border-radius: 50%;
+        }
+
+        .prezly-slate-social-fields--card {
+            gap: 20px;
+        }
+
+        .prezly-slate-social-field__link {
+            @include text-label;
+
+            color: var(--prezly-accent-color);
+            font-weight: $font-weight-semi-bold;
+        }
+
+        .prezly-slate-callout {
+            margin: $spacing-6 auto;
+            line-height: $line-height-m;
+            font-weight: normal;
+            color: var(--prezly-text-color);
+            background-color: color-mix(in srgb, var(--prezly-accent-color) 8%, transparent);
+            border-color: color-mix(in srgb, var(--prezly-accent-color) 60%, transparent);
+        }
+
+        mark {
+            @include highlighted-text;
+        }
+
+        .prezly-slate-button-block {
+            background-color: var(--prezly-accent-color);
+            color: var(--prezly-accent-color-button-text);
+            width: fit-content !important;
+            max-width: 100%;
+
+            &:hover {
+                background-color: var(--prezly-accent-color-hover);
+            }
+
+            &:active {
+                background-color: var(--prezly-accent-color-active);
+            }
+
+            &--outlined {
+                background-color: transparent;
+                border-color: var(--prezly-border-color);
+                color: var(--prezly-text-color);
+
+                &:hover {
+                    background-color: var(--prezly-background-color-secondary);
+                }
+
+                &:active {
+                    background-color: var(--prezly-background-color-tertiary);
+                    border-color: var(--prezly-border-color-secondary);
+                }
+            }
+        }
+
+        .prezly-slate-table-cell {
+            color: var(--prezly-text-color);
+            border-color: var(--prezly-border-color);
+
+            &--header {
+                background: var(--prezly-background-color-tertiary);
+            }
+        }
+
+        .prezly-slate-bookmark-card-component {
+            &__container {
+                border-color: var(--prezly-border-color);
+            }
+
+            &__title {
+                font-weight: $font-weight-bold;
+            }
+
+            &__title,
+            &__provider {
+                color: var(--prezly-text-color);
+            }
+
+            &__description {
+                color: var(--prezly-text-color-secondary);
+            }
+        }
+        /* stylelint-enable selector-class-pattern, max-nesting-depth, selector-max-compound-selectors */
+    }
+}
+
+// This class is attached to <body> when ContentRenderer is mounted
+// because Lightbox component is mounted outside of this component
+.body {
+    :global {
+        /* stylelint-disable selector-class-pattern, max-nesting-depth */
+        .ReactModal__Overlay {
+            z-index: 999;
+        }
+
+        .prezly-slate-lightbox {
+            background-color: var(--prezly-background-color);
+        }
+
+        .prezly-slate-lightbox__close {
+            @include link-primary;
+        }
+
+        .prezly-slate-lightbox__download {
+            background-color: var(--prezly-accent-color);
+            border-color: var(--prezly-accent-color);
+            color: var(--prezly-accent-color-button-text);
+
+            &:hover,
+            &:focus {
+                background-color: var(--prezly-accent-color-hover);
+                border-color: var(--prezly-accent-color-hover);
+            }
+
+            &:active {
+                background-color: var(--prezly-accent-color-active);
+                border-color: var(--prezly-accent-color-active);
+            }
+        }
+
+        .prezly-slate-lightbox__pinterest {
+            display: none;
+        }
+
+        /* stylelint-enable selector-class-pattern, max-nesting-depth */
+    }
+}

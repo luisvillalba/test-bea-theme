@@ -1,0 +1,236 @@
+.container {
+    position: relative;
+
+    /* stylelint-disable-next-line order/order */
+    @include desktop-up {
+        &:hover .image {
+            transform: scale(1.05);
+        }
+
+        &:hover .titleLink {
+            background-size: 100% 100%;
+        }
+    }
+}
+
+.horizontal {
+    display: flex;
+    gap: $spacing-4;
+}
+
+.meta {
+    @include text-small;
+
+    display: flex;
+    align-items: center;
+    gap: $spacing-1;
+    margin-bottom: $spacing-3;
+    overflow: hidden;
+
+    &:empty {
+        display: none;
+    }
+}
+
+.date {
+    @include text-small;
+
+    color: var(--prezly-text-color-tertiary);
+    margin-top: $spacing-3;
+}
+
+.imageWrapper {
+    display: block;
+    flex-shrink: 0;
+    overflow: hidden;
+    text-decoration: none;
+    font-size: 0;
+    border: 1px solid var(--prezly-border-color);
+    aspect-ratio: 4 / 3;
+
+    .withStaticImage & {
+        aspect-ratio: unset;
+    }
+
+    @include desktop-up {
+        .image {
+            transform: scale(1);
+            transition: transform 0.25s ease-in-out;
+        }
+    }
+}
+
+.content {
+    padding: $spacing-4 0;
+}
+
+.title {
+    margin: 0;
+    font-size: 1.625rem;
+    line-height: 140%;
+    font-weight: $font-weight-semi-bold;
+
+    @include tablet-up {
+        @include ensure-max-text-height(3, 140%);
+
+        &.expanded {
+            @include ensure-max-text-height(4, 140%);
+        }
+    }
+}
+
+.titleLink {
+    text-decoration: none;
+    color: var(--prezly-text-color);
+    width: calc(100%);
+    background-image: linear-gradient(transparent calc(100% - 2px), var(--prezly-text-color) 5px);
+    background-repeat: no-repeat;
+    background-size: 0 100%;
+    transition: background-size 0.7s;
+}
+
+.subtitle {
+    @include ensure-max-text-height(3, 160%);
+
+    margin: $spacing-2 0 0;
+    font-size: 1rem;
+    line-height: 160%;
+    font-weight: $font-weight-regular;
+}
+
+.subtitleLink {
+    text-decoration: none;
+    color: var(--prezly-text-color-secondary);
+}
+
+.hero {
+    display: flex;
+    gap: $spacing-7;
+    padding: 0 0 $spacing-8;
+
+    .imageWrapper,
+    .content {
+        flex: 1;
+    }
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .meta {
+        font-size: 1rem;
+        line-height: 160%;
+    }
+
+    .title {
+        @include heading-1;
+    }
+
+    .subtitle {
+        font-size: $font-size-m;
+        line-height: 160%;
+    }
+
+    @include mobile-only {
+        gap: 0;
+        flex-direction: column;
+        margin-top: -$spacing-8;
+
+        .imageWrapper {
+            margin-left: -$spacing-4;
+            margin-right: -$spacing-4;
+        }
+
+        .content {
+            padding: $spacing-4 0;
+        }
+    }
+
+    @include tablet-only {
+        gap: 0;
+        flex-direction: column;
+        margin-top: -$spacing-8;
+
+        .imageWrapper {
+            margin-left: -$spacing-5;
+            margin-right: -$spacing-5;
+        }
+
+        .content {
+            padding: $spacing-5 0;
+        }
+    }
+}
+
+.boxed {
+    @include border-radius-m;
+
+    gap: 0;
+    border: 1px solid var(--prezly-border-color);
+    overflow: hidden;
+
+    .imageWrapper {
+        border: 0;
+    }
+
+    &.vertical .imageWrapper {
+        border-bottom: 1px solid var(--prezly-border-color);
+    }
+
+    &.horizontal .imageWrapper {
+        border-right: 1px solid var(--prezly-border-color);
+    }
+
+    .content {
+        padding: $spacing-4;
+    }
+
+    .title {
+        @include heading-3;
+    }
+    
+    @include mobile-only {
+        .content {
+            padding: $spacing-4;
+        }
+    }
+}
+
+.small {
+    /* stylelint-disable-next-line no-descending-specificity */
+    .imageWrapper {
+        width: 200px;
+    }
+
+    .meta {
+        margin-bottom: $spacing-1;
+    }
+
+    .title {
+        @include heading-2;
+    }
+
+    .subtitle {
+        margin-top: $spacing-half;
+    }
+
+    .date {
+        margin-top: $spacing-1;
+    }
+
+    @include mobile-only {
+        flex-direction: column;
+        gap: 0;
+
+        .imageWrapper {
+            width: 100%;
+        }
+
+        .title {
+            font-size: $font-size-m;
+            line-height: 160%;
+        }
+    }
+}
