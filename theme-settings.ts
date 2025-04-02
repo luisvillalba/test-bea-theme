@@ -3,6 +3,7 @@ export enum Font {
     ALEGREYA_SANS = 'alegreya_sans',
     INTER = 'inter',
     MERRIWEATHER = 'merriweather',
+    GOOGLE_SANS = 'google_sans',
     MULISH = 'mulish',
     NUNITO = 'nunito',
     OPEN_SANS = 'open_sans',
@@ -66,7 +67,7 @@ export const DEFAULT_THEME_SETTINGS: ThemeSettings = {
     accent_color: '#3b82f6',
     background_color: '#ffffff',
     categories_layout: 'dropdown',
-    font: Font.INTER,
+    font: Font.GOOGLE_SANS,
     footer_background_color: '#111827',
     footer_text_color: '#ffffff',
     full_width_featured_story: false,
@@ -102,6 +103,7 @@ export const FONT_FAMILY = {
     [Font.ALEGREYA]: "'Alegreya', serif",
     [Font.ALEGREYA_SANS]: "'Alegreya Sans', sans-serif",
     [Font.INTER]: 'Inter, sans-serif',
+    [Font.GOOGLE_SANS]: "'Google Sans', roboto, sans-serif",
     [Font.MERRIWEATHER]: 'Merriweather, serif',
     [Font.MULISH]: 'Mulish, sans-serif',
     [Font.NUNITO]: "'Nunito', sans-serif",
@@ -130,6 +132,8 @@ export function getGoogleFontName(font: Font): string {
             return 'Alegreya Sans';
         case Font.MERRIWEATHER:
             return 'Merriweather';
+        case Font.GOOGLE_SANS:
+            return 'Google Sans';
         case Font.MULISH:
             return 'Mulish';
         case Font.NUNITO:
